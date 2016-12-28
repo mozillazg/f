@@ -4,7 +4,7 @@ import pytest
 
 import f
 
-if not f.PY3:
+if not f.AS_FUNC:
     f = f.f
 
 

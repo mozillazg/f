@@ -12,8 +12,10 @@ __copyright__ = 'Copyright (c) 2016 mozillazg'
 re_code = re.compile(r'#\{([^\}]+)\}')
 
 PY3 = (sys.version_info[0] == 3)
+AS_FUNC = (sys.version_info >= (3, 4))
 if not PY3:
     str = unicode     # noqa
+    bytes = str
 
 
 def get_chucks(text):
@@ -48,7 +50,7 @@ def f(template_str, namespace=None):
     return ''.join(str_list)
 
 
-if PY3:
+if AS_FUNC:
     f.__title__ = __title__
     f.__version__ = __version__
     f.__author__ = __author__
@@ -56,5 +58,6 @@ if PY3:
     f.__copyright__ = __copyright__
     f.__file__ = __file__
     f.PY3 = PY3
+    f.AS_FUNC = AS_FUNC
     f.f = f
     sys.modules['f'] = f
