@@ -12,11 +12,11 @@ env:
   - TOX_ENV=py35
   - TOX_ENV=py36
   - TOX_ENV=pypy
-  - TOX_ENV=pypy3
 
 install:
   - pip install coveralls
   - pip install tox
+  - pip install -r requirements_dev.txt
 
 script:
   - pre-commit run --all-files

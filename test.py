@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 import pytest
 
 import f
+
+if not f.PY3:
+    f = f.f
 
 
 test_cases = (
@@ -20,7 +24,8 @@ test_cases = (
     ('#{c + " " + d}', None, 'hello world'),
     ('#{c + " " + d}', {'c': 'hello', 'd': '22'}, 'hello 22'),
     ('#{c + " " + "world"}', None, 'hello world'),
-
+    ('北京', {'h': '北京'}, '北京'),
+    ('#{h}', {'h': '北京'}, '北京'),
 )
 
 

@@ -10,8 +10,6 @@ try:
 except ImportError:
     from distutils.core import setup
 
-import f
-
 if sys.argv[-1] == 'publish':
     os.system('python setup.py sdist upload')
     os.system('python setup.py bdist_wheel upload')
@@ -24,14 +22,14 @@ def long_description():
 
 
 setup(
-    name=f.__title__,
-    version=f.__version__,
-    description=f.__doc__,
+    name='f',
+    version='0.0.1',
+    description='Ruby-Style String Interpolation for Python.',
     long_description=long_description(),
     url='https://github.com/mozillazg/f',
-    author=f.__author__,
+    author='mozillazg',
     author_email='mozillazg101@gmail.com',
-    license=f.__license__,
+    license='MIT',
     package_data={'': ['LICENSE']},
     py_modules=['f'],
     include_package_data=True,
