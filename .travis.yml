@@ -1,0 +1,26 @@
+language: python
+python:
+  - 3.5
+
+sudo: false
+
+env:
+  - TOX_ENV=py26
+  - TOX_ENV=py27
+  - TOX_ENV=py33
+  - TOX_ENV=py34
+  - TOX_ENV=py35
+  - TOX_ENV=py36
+  - TOX_ENV=pypy
+  - TOX_ENV=pypy3
+
+install:
+  - pip install coveralls
+  - pip install tox
+
+script:
+  - pre-commit run --all-files
+  - tox -e $TOX_ENV
+
+after_script:
+  - coveralls
