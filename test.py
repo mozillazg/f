@@ -3,9 +3,6 @@ import pytest
 
 import f
 
-if not f.AS_FUNC:
-    f = f.f
-
 
 test_cases = (
     ('', None, ''),
