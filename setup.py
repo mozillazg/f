@@ -23,7 +23,7 @@ def long_description():
 
 setup(
     name='f',
-    version='0.1.0',
+    version='0.2.0',
     description='Ruby-Style String Interpolation for Python.',
     long_description=long_description(),
     url='https://github.com/mozillazg/f',
