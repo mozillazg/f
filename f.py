@@ -18,12 +18,11 @@ if not PY3:
 
 
 def get_chucks(text):
-    matchs = list(re_code.finditer(text))
+    matchs = re_code.finditer(text)
     pos = 0
-    if matchs:
-        for match in matchs:
-            yield text[pos:match.start()], match.group(1)
-            pos = match.end()
+    for match in matchs:
+        yield text[pos:match.start()], match.group(1)
+        pos = match.end()
     yield text[pos:], ''
 
 
